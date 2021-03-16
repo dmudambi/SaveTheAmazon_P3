@@ -15,11 +15,6 @@ contract Fundraiser is Ownable {
     event DonationReceived(address indexed donor, uint256 value);
     event Withdraw(uint256 amount);
 
-    string public name;
-    string public url;
-    string public imageURL;
-    string public description;
-
     address payable public beneficiary;
     address private _owner;
 
@@ -27,19 +22,14 @@ contract Fundraiser is Ownable {
     uint256 public donationsCount;
 
     constructor(
-        string memory _name,
-        string memory _url,
-        string memory _imageURL,
-        string memory _description,
+        
         address payable _beneficiary
     )
         public
     {
-        name = _name;
-        url = _url;
-        imageURL = _imageURL;
-        description = _description;
+        
         beneficiary = _beneficiary;
+        
     }
 
     function setBeneficiary(address payable _beneficiary) public onlyOwner {
